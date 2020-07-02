@@ -9,7 +9,7 @@
 #Create multiple sessions
 import boto3
 
-aws_mag_con_root=boto3.session.Session(profile_name="root")
+aws_mag_con_root=boto3.session.Session(profile_name="admin")
 #aws_mag_con_ec2=boto3.session.Session(profile_name="ec2_developer")
 
 iam_con_re=aws_mag_con_root.resource(service_name="iam", region_name="us-east-2")
@@ -29,7 +29,7 @@ for each in iam_con_cli.list_users()['Users']:
 #!/usr/bin/python3 This is for linux machines
 import boto3
 
-aws_mag_con=boto3.session.Session(profile_name="root")
+aws_mag_con=boto3.session.Session(profile_name="admin")
 iam_con=aws_mag_con.resource('iam')
 
 for each_user in iam_con.users.all():
@@ -40,7 +40,7 @@ for each_user in iam_con.users.all():
 #!/usr/bin/python3 This is for linux machines
 import boto3
 
-aws_mag_con=boto3.session.Session(profile_name="root")
+aws_mag_con=boto3.session.Session(profile_name="admin")
 s3_con=aws_mag_con.resource('s3')
 
 for each_buk in s3_con.buckets.all():

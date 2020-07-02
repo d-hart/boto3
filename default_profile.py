@@ -19,6 +19,5 @@ for each_user in iam_con.users.all():
 
 import boto3
 
-aws_mag_con=boto3.session.Session(profile="root")
+aws_mag_con=boto3.session.Session(profile="admin")
 ec2_con_cli=aws_mag_con.client(service_name="ec2", region="us-east-1")
-#This line is an edit on the server. Test
