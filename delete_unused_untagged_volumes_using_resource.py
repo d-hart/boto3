@@ -7,4 +7,3 @@ for each_volume in ec2_con_re.volumes.filter(Filters=[f_ebs_unused]):
     if not each_volume.tags:
         print(each_volume.id,each_volume.state,each_volume.tags)
 
-d
