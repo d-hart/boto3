@@ -16,7 +16,6 @@ print("Deleted all unused and untagged volumes.")
 ec2_con_cli=aws_man_con.client(service_name="ec2",region_name="us-east-1")
 for each_volume in ec2_con_cli.describe_volumes()["Volumes"]:
     if not "Tags" in each_volume and each_volume["State"]=="available":#if there are no tags and volume is unused, display the item
-        print(each_volume["VolumeId"])
-        print("===================")
-#ec2_volume_filter={"Name":"","Value":[""]}
-#ec2_con_cli.describe_volumes.(Filters)
+        print("Deleting ",each_volume["VolumeId"])#Always print test to see if you can get the information you need.
+        ec2_con_cli.delete_volume(VolumeId=each_volume["VolumeId"])
+print("Deletd all unused and untagged volumes")        
