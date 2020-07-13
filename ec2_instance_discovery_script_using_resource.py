@@ -1,6 +1,6 @@
 import boto3
 import csv
-aws_man_con=boto3.session.Session(profile_name="ec2_developer")
+aws_man_con=boto3.session.Session(profile_name="root")
 ec2_con_re=aws_man_con.resource(service_name="ec2",region_name="us-east-1")
 cnt=1
 csv_ob=open("inventory_info.csv","w",newline='')
